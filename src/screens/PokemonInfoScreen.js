@@ -11,7 +11,6 @@ import { PokemonTypesStats, capitalizeFirstLetter, getPokemonID, pokemonFullID }
 import PokemonWeaknessesIcon from '../components/PokemonWeaknessesIcon';
 import { ImageBackground } from 'react-native';
 import { HeaderBackButton } from '@react-navigation/elements';
-import { Input } from 'react-native-elements';
 
 const SPACENING = 22;
 
@@ -72,10 +71,7 @@ const PokemonInfoScreen = ({ navigation, route }) => {
             } catch (error) {
                 console.log(error.response)
                 if (!axios.isCancel(error)) {
-                    if (error.response?.data)
-                        unknownErrorToast(error.response.data.message);
-                    else
-                        unknownErrorToast();
+                    unknownErrorToast();
                     // navigation.pop();
                 }
             } finally {

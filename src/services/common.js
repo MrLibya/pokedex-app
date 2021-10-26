@@ -9,8 +9,8 @@ export const SCREEN_HEIGHT = height;
 
 export const unknownErrorToast = (text) => Toast.show({
     type: 'error',
-    text1: 'حصل خطا',
-    text2: text ?? "حصل خطا ما , حاول مجددا."
+    text1: 'Error',
+    text2: text ?? "Something Went Wrong, Try again"
 });
 
 export function fontNormalize(size) {
