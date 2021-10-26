@@ -1,5 +1,5 @@
 # pokedex-app
-This is just first version of thet pokedex app, it still incomplate !
+This is just first version of thet pokedex app, it still incomplete !
 # Demo
 
 <img src="/demo/home.png" width="250"> <img src="/demo/home_2.png" width="250">
