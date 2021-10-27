@@ -46,30 +46,28 @@ const PokemonInfoScreen = ({ navigation, route }) => {
                         const { chain } = pokeEvolution.data;
                         pokeData.evolutionChain = chain;
                     }
-
-                    let pokeGrowth = await axios.get(species.growth_rate.url, { cancelToken: source.token });
-                    if (pokeGrowth == 200) {
-                        const { damage_relations: { double_damage_from, half_damage_from, no_damage_from } } = pokeGrowth;
-                        let dmg = {};
-                        double_damage_from.map((from) => {
-                            dmg[from.name] = '2';
-                        });
-                        half_damage_from.map((from) => {
-                            dmg[from.name] = '½';
-                        });
-                        pokeData.damage_from = dmg;
-                    }
+                    // let pokeGrowth = await axios.get(species.growth_rate.url, { cancelToken: source.token });
+                    pokeData.growthRate = species.growth_rate.name;
+                    
                 }
-
                 if (response[1].status == 200) {
-                    const { name } = response[1].data;
-                    pokeData.growthRate = name;
+                    const { damage_relations: { double_damage_from, half_damage_from, no_damage_from } } = response[1].data;
+                    let dmg = {};
+                    // console.log(damage_relations)
+                    double_damage_from.map((from) => {
+                        dmg[from.name] = '2';
+                    });
+                    half_damage_from.map((from) => {
+                        dmg[from.name] = '½';
+                    });
+                    pokeData.damage_from = dmg;
+
                 }
 
                 setData(pokeData);
 
             } catch (error) {
-                console.log(error.response)
+                console.log(error)
                 if (!axios.isCancel(error)) {
                     unknownErrorToast();
                     // navigation.pop();
@@ -279,7 +277,6 @@ const PokemonInfoScreen = ({ navigation, route }) => {
                 >Type Defenses</Text>
                 <View style={{ marginTop: 5 }} />
                 <Text style={Typography.pokemonDescription}>The effectiveness of each type on {pokemonName}</Text>
-                {console.log(data?.damage_from)}
                 <View style={styles.typeDefensesView}>
                     {Object.keys(PokemonTypesStats).slice(0, 9).map((type, i) => <View key={i}
                         style={{ marginRight: 13 }}>
