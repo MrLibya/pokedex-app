@@ -20,6 +20,11 @@ https://www.figma.com/file/THLxZSlOoUYMZrjFg0Kl1M/Pokédex?node-id=268%3A320
 ```
 yarn install
 ````
+### Then Link the font assets
+```
+npx react-native link
+````
+
 ### Now run the app
 
 ```
