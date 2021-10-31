@@ -6,6 +6,7 @@ import API from '../services/api';
 import { getPokemonID } from '../services/utils';
 import PokemonCard, { CARD_HEIGHT } from '../components/PokemonCard';
 import { SearchBar } from 'react-native-elements';
+import { SafeAreaView } from 'react-native';
 
 function HomeScreen({ route, navigation }) {
 	const [loading, setLoading] = useState(false);
@@ -130,6 +131,7 @@ function HomeScreen({ route, navigation }) {
 
 	// for some reasone the input on header will break if it was function, so i must use it and react element
 	const _renderHeader = <View style={styles.headerContentContainer}>
+		<SafeAreaView />
 		{/* <ImageBackground
 					resizeMode="contain"
 					style={{ width: '100%', height: SCREEN_HEIGHT / 4, }}

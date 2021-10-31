@@ -531,7 +531,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     tabsText: {
-        fontFamily: 'Sf-Pro-Display-Medium',
+        fontFamily: 'SFProDisplay-Medium',
         fontSize: fontNormalize(12)
     },
     tabsBackgroundImage: {
@@ -552,7 +552,7 @@ const styles = StyleSheet.create({
         padding: 40
     },
     infoTitle: {
-        fontFamily: 'Sf-Pro-Display-Bold',
+        fontFamily: 'SFProDisplay-Bold',
         fontSize: fontNormalize(15)
     },
     infoRow: {
@@ -565,14 +565,14 @@ const styles = StyleSheet.create({
     infoRowTitle: {
         flex: 2,
         // backgroundColor:'red',
-        fontFamily: 'Sf-Pro-Display-Bold',
+        fontFamily: 'SFProDisplay-Bold',
         fontSize: fontNormalize(12),
         color: '#17171B'
     },
     infoRowSubTitle: {
         flex: 3,
         // backgroundColor:'green',
-        fontFamily: 'Sf-Pro-Display-Regular',
+        fontFamily: 'SFProDisplay-Regular',
         fontSize: fontNormalize(14),
         color: '#747476',
         // alignSelf:'flex-start'
